@@ -13,5 +13,5 @@ document.getElementById("logout").addEventListener("click",function(){
     sessionStorage.removeItem("usr_email");
     sessionStorage.removeItem("usr_id");
     window.location.href="login.html";});
-window.history.forward();
+
   
