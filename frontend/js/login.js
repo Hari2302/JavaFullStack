@@ -16,7 +16,7 @@ document.getElementById("submit").onclick = function() {
     }
     else{
         // console.log("yes");
-        fetch("https://spring-application.onrender.com/Authenticate",{
+        fetch("http://127.0.0.1:8080/Authenticate",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({"email":email.value,"password":pass1.value})},mssg.innerHTML="Please wait a moment...").then(response => 
