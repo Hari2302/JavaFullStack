@@ -29,7 +29,8 @@ document.getElementById("submit").onclick = function() {
         fetch("http://127.0.0.1:8080/add_user",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({"name":Name.value,"email":email.value,"password":pass2.value})},mssg.innerHTML="Please wait a moment...").then(response => {
+        body:JSON.stringify({"name":Name.value,"email":email.value,"password":pass2.value})},mssg.innerHTML="Please wait a moment...",document.getElementById("overlay").style.display = "block").then(response => {
+            document.getElementById("overlay").style.display = "none";
             if(response.status=="200"){
                 // alert("User Created");
                 mssg.innerHTML="User Created"
