@@ -26,7 +26,7 @@ document.getElementById("submit").onclick = function() {
     }
     else if(allAreFilled && verify){
         // console.log("yes");
-        fetch("https://spring-application.onrender.com/add_user",{
+        fetch("http://127.0.0.1:8080/add_user",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({"name":Name.value,"email":email.value,"password":pass2.value})},mssg.innerHTML="Please wait a moment...").then(response => {
