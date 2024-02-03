@@ -19,9 +19,11 @@ document.getElementById("submit").onclick = function() {
         fetch("http://127.0.0.1:8080/Authenticate",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({"email":email.value,"password":pass1.value})},mssg.innerHTML="Please wait a moment...").then(response => 
+        body:JSON.stringify({"email":email.value,"password":pass1.value})},mssg.innerHTML="Please wait a moment...",document.getElementById("overlay").style.display = "block").then(response => 
           {console.log(response.status)
+           document.getElementById("overlay").style.display = "none";
             if (response.status==401){
+              mssg.innerHTML="";
               return "";
             }
             else{
@@ -39,7 +41,8 @@ document.getElementById("submit").onclick = function() {
                 window.location.href = "homepage.html";
             }
             else{
-                alert("Please Check Your Credentials");
+                mssg.innerHTML="Please Check Your Credentials";
+                // alert("Please Check Your Credentials");
             }}
           
         )
