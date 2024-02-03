@@ -176,7 +176,7 @@ function cards(name="",url="",Id="",num=""){
         }
       }
         li=0;
-        let response=(fetch("https://spring-application.onrender.com/song/"+path).then(res => res.json()));
+        let response=(fetch("http://127.0.0.1:8080/song/"+path).then(res => res.json()));
         response.then(data=>{
           // console.log(filterValues);
           for(let l=0;l<data.length;l++){
@@ -288,7 +288,7 @@ function cards(name="",url="",Id="",num=""){
           }
         }
           li=0;
-          let response=(fetch("https://spring-application.onrender.com/song/"+path).then(res => res.json()));
+          let response=(fetch("http://127.0.0.1:8080/song/"+path).then(res => res.json()));
           response.then(data=>{
             // console.log(filterValues);
             for(let l=0;l<data.length;l++){
@@ -499,7 +499,7 @@ function cards(name="",url="",Id="",num=""){
   }
   window.addEventListener("beforeunload", function() {
     console.log("");
-    fetch("https://spring-application.onrender.com/song/U_SongList",{
+    fetch("http://127.0.0.1:8080/song/U_SongList",{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({"liked":String(array),"id":usr_id})});
