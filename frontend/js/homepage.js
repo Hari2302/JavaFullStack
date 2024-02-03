@@ -1,6 +1,6 @@
 
 let usr_id = sessionStorage.getItem("usr_id");
-fetch("https://spring-application.onrender.com/"+usr_id).then(res => res.json()).then(data => 
+fetch("http://127.0.0.1:8080/"+usr_id).then(res => res.json()).then(data => 
 {sessionStorage.setItem("usr_name",data["name"]);
  sessionStorage.setItem("usr_email",data["email"])
  sessionStorage.setItem("like_s",data["liked_s"]);
